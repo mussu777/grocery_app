@@ -9,7 +9,7 @@ class AppDelegate: RCTAppDelegate {
   override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     self.moduleName = "grocery_app"
     self.dependencyProvider = RCTAppDependencyProvider()
-    GMSServices.provideAPIKey("YOUR_GOOGLE_MAPS_API_KEY")
+    GMSServices.provideAPIKey("AIzaSyCPqSan_RGnJD5FZqkwrhgd25KOK8EDynE")
 
     // You can add your custom initial props in the dictionary below.
     // They will be passed down to the ViewController used by React Native.

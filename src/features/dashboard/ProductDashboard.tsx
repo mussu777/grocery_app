@@ -1,37 +1,33 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Animated as RNAnimated,
-  Platform,
-  SafeAreaView,
-  TouchableOpacity,
-} from 'react-native';
-import React, {useEffect, useRef} from 'react';
-import {NoticeHeight, screenHeight} from '@utils/Scaling';
-import {
-  CollapsibleContainer,
-  CollapsibleScrollView,
-  useCollapsibleContext,
-  CollapsibleHeaderContainer,
-  withCollapsibleContext,
-} from '@r0b0t3d/react-native-collapsible';
-import Geolocation from '@react-native-community/geolocation';
-import {reverseGeocode} from '@service/mapService';
-import {useAuthStore} from '@state/authStore';
-import NoticeAnimation from './NoticeAnimation';
-import Visuals from './Visuals';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
-import {RFValue} from 'react-native-responsive-fontsize';
-import {Fonts} from '@utils/Constants';
-import CustomText from '@components/ui/CustomText';
-import AnimatedHeader from './AnimatedHeader';
 import Content from '@components/dashboard/Content';
-import StickySearchBar from './StickySearchBar';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import CustomText from '@components/ui/CustomText';
 import withCart from '@features/cart/WithCart';
 import withLiveStatus from '@features/map/WithLiveStatus';
+import {
+  CollapsibleContainer,
+  CollapsibleHeaderContainer,
+  CollapsibleScrollView,
+  useCollapsibleContext,
+  withCollapsibleContext,
+} from '@r0b0t3d/react-native-collapsible';
+import { useAuthStore } from '@state/authStore';
+import { Fonts } from '@utils/Constants';
+import { NoticeHeight, screenHeight } from '@utils/Scaling';
+import React, { useEffect, useRef } from 'react';
+import {
+  Platform,
+  Animated as RNAnimated,
+  StyleSheet,
+  TouchableOpacity,
+  View
+} from 'react-native';
+import Animated, { useAnimatedStyle, withTiming } from 'react-native-reanimated';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import AnimatedHeader from './AnimatedHeader';
+import NoticeAnimation from './NoticeAnimation';
+import StickySearchBar from './StickySearchBar';
+import Visuals from './Visuals';
 
 const NOTICE_HEIGHT = -(NoticeHeight + 12);
 

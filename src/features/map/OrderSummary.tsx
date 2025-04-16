@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import CustomText from '@components/ui/CustomText';
 import BillDetails from '@features/order/BillDetails';
 
-const OrderSummary: FC<{order: any}> = ({order}) => {
+const OrderSummary: FC<{ order: any }> = ({ order }) => {
   const totalPrice =
     order?.items.reduce(
       (total: number, cartItem: any) =>

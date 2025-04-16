@@ -23,7 +23,6 @@ interface DecodedToken {
 
 const SplashScreen: FC = () => {
   const {user, setUser} = useAuthStore();
-  // useAuthStore.getState().logout();
 
   const tokenCheck = async () => {
     const accessToken = tokenStorage.getString('accessToken') as string;

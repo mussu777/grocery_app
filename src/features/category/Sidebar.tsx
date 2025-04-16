@@ -1,20 +1,13 @@
-import {
-  Animated,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import React, {FC, useEffect, useRef} from 'react';
+import CustomText from '@components/ui/CustomText';
 import {Colors} from '@utils/Constants';
-import {
+import React, {FC, useEffect, useRef} from 'react';
+import {ScrollView, StyleSheet, TouchableOpacity, View} from 'react-native';
+import Animated, {
   runOnJS,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-import CustomText from '@components/ui/CustomText';
 import {RFValue} from 'react-native-responsive-fontsize';
 
 interface SidebarProps {
@@ -28,7 +21,6 @@ const Sidebar: FC<SidebarProps> = ({
   categories,
   onCategoryPress,
 }) => {
- 
   const scrollViewRef = useRef<ScrollView>(null);
   const indicatorPosition = useSharedValue(0);
   const animatedValues = categories?.map(() => useSharedValue(0));
@@ -49,11 +41,9 @@ const Sidebar: FC<SidebarProps> = ({
           y: targetIndex * 100,
           animated: true,
         });
-        // });
-      })();
+      });
     }
   }, [selectedCategory]);
-
 
   const indicatorStyle = useAnimatedStyle(() => ({
     transform: [{translateY: indicatorPosition.value}],
@@ -64,7 +54,7 @@ const Sidebar: FC<SidebarProps> = ({
       <ScrollView
         ref={scrollViewRef}
         contentContainerStyle={{paddingBottom: 50}}
-        showsVerticalScrollIndicator={false} >
+        showsVerticalScrollIndicator={false}>
         <Animated.View style={[styles.indicator, indicatorStyle]} />
         <View>
           {categories?.map((category: any, index: number) => {
@@ -81,7 +71,7 @@ const Sidebar: FC<SidebarProps> = ({
                 <View
                   style={[
                     styles.imageContainer,
-                    selectedCategory.id === category?._id &&
+                    selectedCategory._id === category?._id &&
                       styles.selectedImageContainer,
                   ]}>
                   <Animated.Image
